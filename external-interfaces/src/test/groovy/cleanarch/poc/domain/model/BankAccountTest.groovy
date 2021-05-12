@@ -1,7 +1,8 @@
 package cleanarch.poc.domain.model
 
-import cleanarch.poc.domain.exception.DepositException
-import cleanarch.poc.domain.exception.WithdrawException
+import cleanarch.poc.domain.entities.exception.DepositException
+import cleanarch.poc.domain.entities.exception.WithdrawException
+import cleanarch.poc.domain.entities.model.BankAccount
 import spock.lang.Specification
 
 class BankAccountTest extends Specification{

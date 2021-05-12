@@ -1,11 +1,11 @@
 package cleanarch.poc.services
 
 import cleanarch.poc.application.services.AccountManagementService
-import cleanarch.poc.domain.model.BankAccount
-import cleanarch.poc.domain.model.Contract
-import cleanarch.poc.domain.model.Customer
-import cleanarch.poc.domain.services.repository.BankAccountRepository
-import cleanarch.poc.domain.services.repository.ContractRepository
+import cleanarch.poc.domain.entities.model.BankAccount
+import cleanarch.poc.domain.entities.model.Contract
+import cleanarch.poc.domain.entities.model.Customer
+import cleanarch.poc.usecases.repository.BankAccountRepository
+import cleanarch.poc.usecases.repository.ContractRepository
 import spock.lang.Specification
 
 import java.time.LocalDate
