@@ -1,6 +1,6 @@
 package cleanarch.poc.usecases.repository;
 
-import cleanarch.poc.domain.entities.model.Customer;
+import cleanarch.poc.domainentities.model.Customer;
 
 import java.util.Optional;
 

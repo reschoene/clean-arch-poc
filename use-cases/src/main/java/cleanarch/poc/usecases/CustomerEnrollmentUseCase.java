@@ -1,23 +1,25 @@
 package cleanarch.poc.usecases;
 
-import lombok.RequiredArgsConstructor;
-import cleanarch.poc.domain.entities.model.BankAccount;
-import cleanarch.poc.domain.entities.model.Contract;
-import cleanarch.poc.domain.entities.model.Customer;
+import cleanarch.poc.domainentities.model.BankAccount;
+import cleanarch.poc.domainentities.model.Contract;
+import cleanarch.poc.domainentities.model.Customer;
 import cleanarch.poc.usecases.repository.BankAccountRepository;
 import cleanarch.poc.usecases.repository.ContractRepository;
 import cleanarch.poc.usecases.repository.CustomerRepository;
+import lombok.RequiredArgsConstructor;
 
 import java.time.LocalDate;
+import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 
 @RequiredArgsConstructor
-public class CustomerEnrollmentUseCaseService {
+public class CustomerEnrollmentUseCase {
     private final ContractRepository contractRepository;
     private final CustomerRepository customerRepository;
     private final BankAccountRepository bankAccountRepository;
 
-    public Contract enrollNewCustomer(Customer customer) {
+    public Optional<Contract> enrollNewCustomer(Customer customer) {
         try{
             var customerId = customerRepository.create(customer);
             customer.setId(customerId);
@@ -39,13 +41,13 @@ public class CustomerEnrollmentUseCaseService {
 
             var id = contractRepository.create(contract);
 
-            return contractRepository.getById(id).get();
+            return contractRepository.getById(id);
         }catch (Exception e){
             e.printStackTrace();
-            return null;
+            return Optional.empty();
         }
     }
-    
+
     public List<Contract> unEnrollCustomer(Customer customer) {
         List<Contract> contracts = contractRepository.getByCustomer(customer);
 
@@ -56,7 +58,7 @@ public class CustomerEnrollmentUseCaseService {
             }
         }catch (Exception e){
             e.printStackTrace();
-            return null;
+            return Arrays.asList();
         }
 
         return contracts;

@@ -11,4 +11,4 @@ rootProject.name = 'clean-arch-poc'
 include('domain-entities')
 include('use-cases')
 include('interface-adapters')
-include('external-interfaces')
+include('infrastructure')

@@ -1,7 +1,7 @@
 package cleanarch.poc.usecases.repository;
 
-import cleanarch.poc.domain.entities.model.BankAccount;
-import cleanarch.poc.domain.entities.model.Customer;
+import cleanarch.poc.domainentities.model.BankAccount;
+import cleanarch.poc.domainentities.model.Customer;
 
 import java.util.List;
 import java.util.Optional;

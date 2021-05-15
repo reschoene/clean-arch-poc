@@ -1,17 +1,15 @@
 package cleanarch.poc.usecases;
 
 import lombok.RequiredArgsConstructor;
-import cleanarch.poc.domain.entities.exception.DepositException;
-import cleanarch.poc.domain.entities.exception.WithdrawException;
-import cleanarch.poc.domain.entities.model.AccountTransferService;
-import cleanarch.poc.domain.entities.model.BankAccount;
+import cleanarch.poc.domainentities.exception.DepositException;
+import cleanarch.poc.domainentities.exception.WithdrawException;
+import cleanarch.poc.domainentities.model.BankAccount;
 import cleanarch.poc.usecases.repository.BankAccountRepository;
 
 @RequiredArgsConstructor
-public class FundsTransferService implements AccountTransferService {
+public class FundsTransferUseCase {
     private final BankAccountRepository bankAccountRepository;
 
-    @Override
     public String transfer(double amount, BankAccount from, BankAccount to) {
         String result = "";
 

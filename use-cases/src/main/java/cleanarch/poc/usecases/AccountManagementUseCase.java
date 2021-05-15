@@ -1,43 +1,37 @@
-package cleanarch.poc.application.services;
+package cleanarch.poc.usecases;
 
-import lombok.RequiredArgsConstructor;
-import cleanarch.poc.domain.entities.model.BankAccount;
-import cleanarch.poc.domain.entities.model.Contract;
-import cleanarch.poc.domain.entities.model.Customer;
+import cleanarch.poc.domainentities.model.BankAccount;
+import cleanarch.poc.domainentities.model.Contract;
+import cleanarch.poc.domainentities.model.Customer;
 import cleanarch.poc.usecases.repository.BankAccountRepository;
 import cleanarch.poc.usecases.repository.ContractRepository;
-import cleanarch.poc.usecases.usecases.AccountManagement;
+import lombok.RequiredArgsConstructor;
 
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
 @RequiredArgsConstructor
-public class AccountManagementService implements AccountManagement {
+public class AccountManagementUseCase {
     private final BankAccountRepository bankAccountRepository;
     private final ContractRepository contractRepository;
 
-    @Override
     public void create(BankAccount account) {
         bankAccountRepository.create(account);
     }
 
-    @Override
     public Optional<BankAccount> getByNumber(long accountNumber) {
         return bankAccountRepository.getByNumber(accountNumber);
     }
 
-    @Override
     public List<BankAccount> getByCustomer(Customer customer) {
         return bankAccountRepository.getByCustomer(customer);
     }
 
-    @Override
     public void update(BankAccount bankAccount) {
         bankAccountRepository.update(bankAccount);
     }
 
-    @Override
     public void delete(BankAccount bankAccount) {
         List<Contract> contracts = contractRepository.getByAccount(bankAccount);
 
