@@ -1,7 +1,7 @@
 package cleanarch.poc.external.interfaces.spring.controller;
 
+import cleanarch.poc.usecases.FundsTransferUseCase;
 import lombok.RequiredArgsConstructor;
-import cleanarch.poc.domain.entities.model.AccountTransferService;
 import cleanarch.poc.external.interfaces.spring.controller.dto.FundsTransferDto;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 @RequiredArgsConstructor
 @RequestMapping("/funds-transfer")
 public class FundsTransferServiceController {
-    private final AccountTransferService transferService;
+    private final FundsTransferUseCase transferService;
 
     @PostMapping
     public ResponseEntity<?> transfer(@RequestBody FundsTransferDto fundsTransferDto){

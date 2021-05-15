@@ -1,6 +1,6 @@
 package cleanarch.poc.services
 
-import cleanarch.poc.application.services.CustomerEnrollmentService
+import cleanarch.poc.usecases.CustomerEnrollmentUseCaseService
 import cleanarch.poc.domain.entities.model.BankAccount
 import cleanarch.poc.domain.entities.model.Contract
 import cleanarch.poc.domain.entities.model.Customer
@@ -11,11 +11,11 @@ import spock.lang.Specification
 
 import java.time.LocalDate
 
-class CustomerEnrollmentServiceTest extends Specification{
+class CustomerEnrollmentUseCaseServiceTest extends Specification{
     def bankAccountRepository = Mock(BankAccountRepository)
     def contractRepository = Mock(ContractRepository)
     def customerRepository = Mock(CustomerRepository)
-    def accountManagementService = new CustomerEnrollmentService(contractRepository, customerRepository, bankAccountRepository)
+    def accountManagementService = new CustomerEnrollmentUseCaseService(contractRepository, customerRepository, bankAccountRepository)
 
     def "enrollNewCustomer successfully enroll a new customer and returns its contract"(){
         given:

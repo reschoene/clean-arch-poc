@@ -1,4 +1,4 @@
-package cleanarch.poc.application.services;
+package cleanarch.poc.usecases;
 
 import lombok.RequiredArgsConstructor;
 import cleanarch.poc.domain.entities.model.BankAccount;
@@ -7,13 +7,12 @@ import cleanarch.poc.domain.entities.model.Customer;
 import cleanarch.poc.usecases.repository.BankAccountRepository;
 import cleanarch.poc.usecases.repository.ContractRepository;
 import cleanarch.poc.usecases.repository.CustomerRepository;
-import cleanarch.poc.usecases.usecases.CustomerEnrollment;
 
 import java.time.LocalDate;
 import java.util.List;
 
 @RequiredArgsConstructor
-public class CustomerEnrollmentService implements CustomerEnrollment {
+public class CustomerEnrollmentUseCaseService {
     private final ContractRepository contractRepository;
     private final CustomerRepository customerRepository;
     private final BankAccountRepository bankAccountRepository;
@@ -46,8 +45,7 @@ public class CustomerEnrollmentService implements CustomerEnrollment {
             return null;
         }
     }
-
-    @Override
+    
     public List<Contract> unEnrollCustomer(Customer customer) {
         List<Contract> contracts = contractRepository.getByCustomer(customer);
 
