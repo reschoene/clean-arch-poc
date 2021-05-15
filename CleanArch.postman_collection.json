@@ -1,0 +1,226 @@
+{
+	"info": {
+		"_postman_id": "6f43298a-e237-4d9a-b7bf-1e90e3401066",
+		"name": "CleanArch",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "enrollCustomer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstName\": \"Renato\",\n    \"familyName\": \"Schoene\",\n    \"cpf\": \"2222322\",\n    \"cnpj\": \"\",\n    \"address\":{\n        \"zipCode\": \"2323232-000\",\n        \"street\": \"rua dos patos\",\n        \"number\": 233\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/customer-enrollment/enroll",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"customer-enrollment",
+						"enroll"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "un-erollCustomer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 1,\n    \"firstName\": \"Renato\",\n    \"familyName\": \"Schoene\",\n    \"cpf\": \"2222322\",\n    \"cnpj\": \"\",\n    \"address\":{\n        \"zipCode\": \"2323232-000\",\n        \"street\": \"rua dos patos\",\n        \"number\": 233\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/customer-enrollment/un-enroll",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"customer-enrollment",
+						"un-enroll"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createAccount",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"owner\": {\n        \"id\": 1,\n        \"firstName\": \"Renato\",\n        \"familyName\": \"Schoene\",\n        \"cpf\": \"2222322\",\n        \"cnpj\": \"\",\n        \"address\": {\n            \"id\": 0,\n            \"zipCode\": \"2323232-000\",\n            \"street\": \"rua dos patos\",\n            \"number\": 233\n        }\n    },\n    \"balance\": 50\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/accounts",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"accounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fundsTransfer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"amount\": 20,\n    \"from\":{\n        \"number\": 2\n    },\n    \"to\":{\n        \"number\": 1\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/funds-transfer",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"funds-transfer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateAccount",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"number\": 1,\n    \"owner\": {\n        \"id\": 1,\n        \"firstName\": \"Renato\",\n        \"familyName\": \"Schoene\",\n        \"cpf\": \"2222322\",\n        \"cnpj\": \"\",\n        \"address\": {\n            \"id\": 0,\n            \"zipCode\": \"2323232-000\",\n            \"street\": \"rua dos patos\",\n            \"number\": 233\n        }\n    },\n    \"balance\": 120.4\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/accounts",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"accounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteAccount",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"number\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/accounts",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"accounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAccountsByCustomer",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/accounts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"accounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAccountByNumber",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/accounts/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"accounts",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
