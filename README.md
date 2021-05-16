@@ -1,4 +1,4 @@
-# Clean Architecture - POC 
+# Clean Architecture - POC
 
 ### Sobre a arquitetura *Clean*
 
@@ -36,7 +36,7 @@ A POC foi desenvolvida em Java e consiste em um projeto *gradle* multi-módulos,
   2. ControllerAdapters. Fazem a conversão de dados entre o formato recebido nos endpoints dos serviços REST (DTOs) e entidades de negócio (domain entities)
 
 #### infrastructure
-+ Somente nesta camada devem estar as implementações que possuem dependências diretas a *frameworks* e tecnologias. Nesta camada residem as classes que implementam os serviços de APIs REST, persistência de dados podendo fazer uso de mapeamento objeto-relacional (entities e repositories JPA) e dependências a *frameworks* como o *Spring*. Além disso, é nesta camada onde devem estar os testes unitários e de integração.  
++ Somente neste módulo devem estar as implementações que possuem dependências diretas a *frameworks* e tecnologias. Nesta camada residem as classes que implementam os serviços de APIs REST e persistência de dados (repositories JPA), fazendo uso de *frameworks* como o *Spring*. Além disso, é nesta camada onde devem estar os testes unitários e de integração. 
 
 <br>
 
@@ -49,4 +49,3 @@ A POC foi desenvolvida em Java e consiste em um projeto *gradle* multi-módulos,
 4. Na raíz do projeto disponibilizei o arquivo `CleanArch.postman_collection.json`, ele contem uma *collection* do Postman. Importe esta *collection* no Postman para testar os endpoints do serviço REST. <br><br>
 
 [Clique aqui para visualizar o artigo que explica os princípios da arquitetura no blog do autor](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
-
