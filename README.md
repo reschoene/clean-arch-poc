@@ -1,12 +1,10 @@
-# Clean Architecture - POC
-
-<br>
+# Clean Architecture - POC 
 
 ### Sobre a arquitetura *Clean*
 
 Criada por Robert Cecil Martin (Uncle Bob), assim como as arquiteturas Onion e Hexagonal, a Clean Arch também tem por objetivo a separação entre responsabilidades (SoC) das partes do sistema, propiciando uma maior manutenibilidade. A arquitetura é organizada em camadas, onde cada uma representa uma área do software. De maneira geral, quanto mais a camada se aproxima do centro, mais alta a abstração se torna. 
 
-
+<br>
 
 #### Regra de dependência
 
