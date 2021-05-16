@@ -4,8 +4,6 @@
 
 Criada por Robert Cecil Martin (Uncle Bob), assim como as arquiteturas Onion e Hexagonal, a Clean Arch também tem por objetivo a separação entre responsabilidades (SoC) das partes do sistema, propiciando uma maior manutenibilidade. A arquitetura é organizada em camadas, onde cada uma representa uma área do software. De maneira geral, quanto mais a camada se aproxima do centro, mais alta a abstração se torna. 
 
-<br>
-
 #### Regra de dependência
 
 . A regra geral que faz com que esta arquitetura funcione, diz que dependências somente podem apontar para dentro. Desta forma, nomes declarados numa camada mais externa não podem ser mencionados numa camada interna, ou seja, camadas mais internas não devem conhecer as camadas mais externas.
