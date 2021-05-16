@@ -4,9 +4,9 @@
 
 ### Sobre a arquitetura *Clean*
 
-Criada por Robert Cecil Martin (Uncle Bob), assim como as arquiteturas Onion e Hexagonal, a Clean Arch também tem por objetivo a separação entre responsabilidades (SoC) das partes do sistema, propiciando uma maior manutenibilidade. A arquitetura é organizada em camadas, onde cada uma representa uma área do software. De maneira geral, quanto mais a camada se aproxima do centro, mais alta a abstração se torna.
+Criada por Robert Cecil Martin (Uncle Bob), assim como as arquiteturas Onion e Hexagonal, a Clean Arch também tem por objetivo a separação entre responsabilidades (SoC) das partes do sistema, propiciando uma maior manutenibilidade. A arquitetura é organizada em camadas, onde cada uma representa uma área do software. De maneira geral, quanto mais a camada se aproxima do centro, mais alta a abstração se torna. 
 
-<br>
+
 
 #### Regra de dependência
 
@@ -22,13 +22,11 @@ Criada por Robert Cecil Martin (Uncle Bob), assim como as arquiteturas Onion e H
 
 Nos casos em que camadas externas dependem das camadas internas, a regra da dependência é cumprida. Mas e nos casos onde as camadas internas precisam fazer uso de recursos presentes nas camadas externas? ex.: um caso de uso precisa finalizar persistindo os dados num armazenamento externo, como um banco de dados. Podemos resolver isso sem violar a regra de dependência, fazendo uso do Princípio da Inversão de Dependência. Desta forma no exemplo citado, fazemos com que a camada de caso de uso dependa de uma abstração da persistência de dados, cujo implementação virá nas camadas mais externas.
 
-<br><br>
+<br>
 
 ### Sobre esta POC
 
-A POC foi desenvolvida em Java e consiste em um projeto *gradle* multi-módulos, sendo eles:
-
-<br>
+A POC foi desenvolvida em Java e consiste em um projeto *gradle* multi-módulos, sendo eles: 
 
 #### domain-entities
 + Módulo que define as classes de domínio (pojo + regras de negócio individuais). Corresponde ao núcleo da aplicação.
@@ -42,9 +40,9 @@ A POC foi desenvolvida em Java e consiste em um projeto *gradle* multi-módulos,
   2. ControllerAdapters. Fazem a conversão de dados entre o formato recebido nos endpoints dos serviços REST (DTOs) e entidades de negócio (domain entities)
 
 #### infrastructure
-+ Somente nesta camada devem estar as implementações que possuem dependências diretas a *frameworks* e tecnologias. Nesta camada residem as classes que implementam os serviços de APIs REST, persistência de dados podendo fazer uso de mapeamento objeto-relacional (entities e repositories JPA) e dependências a *frameworks* como o *Spring*. Além disso, é nesta camada onde devem estar os testes unitários e de integração. 
++ Somente nesta camada devem estar as implementações que possuem dependências diretas a *frameworks* e tecnologias. Nesta camada residem as classes que implementam os serviços de APIs REST, persistência de dados podendo fazer uso de mapeamento objeto-relacional (entities e repositories JPA) e dependências a *frameworks* como o *Spring*. Além disso, é nesta camada onde devem estar os testes unitários e de integração.  
 
-<br><br>
+<br>
 
 ### Passos para compilar e testar o projeto
 
